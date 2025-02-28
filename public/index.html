@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Translator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Language Translator</h1>
+            <p class="tagline">Detect language and translate text instantly</p>
+        </header>
+        
+        <main>
+            <div class="translation-container">
+                <div class="input-container">
+                    <div class="language-info">
+                        <div id="detected-language">Auto-detect</div>
+                        <button id="clear-btn" title="Clear text"><i class="fas fa-times"></i></button>
+                    </div>
+                    <textarea id="source-text" placeholder="Enter text to translate..."></textarea>
+                </div>
+                
+                <div class="controls">
+                    <button id="swap-btn" title="Swap languages"><i class="fas fa-exchange-alt"></i></button>
+                    <button id="translate-btn">Translate</button>
+                </div>
+                
+                <div class="output-container">
+                    <div class="language-info">
+                        <select id="target-language"></select>
+                        <button id="copy-btn" title="Copy translation"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <div id="translated-text" class="translated-content">Translation will appear here...</div>
+                </div>
+            </div>
+            
+            <div class="history-container">
+                <h2>Recent Translations</h2>
+                <div id="history-list"></div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2025 Language Translator | <a href="#" id="about-link">About</a></p>
+        </footer>
+    </div>
+    
+    <div id="about-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>About Language Translator</h3>
+            <p>Language Translator is a web application that allows you to translate text between multiple languages. It automatically detects the source language and translates to your selected target language.</p>
+            <p>Features:</p>
+            <ul>
+                <li>Automatic language detection</li>
+                <li>Support for 15+ languages</li>
+                <li>Translation history</li>
+                <li>Copy translations to clipboard</li>
+            </ul>
+            <div class="modal-actions">
+                <button id="close-about-btn">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="loading-indicator" class="hidden">
+        <div class="spinner"></div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
